@@ -8,7 +8,24 @@ def get_total_identical_pairs(list_of_numbers):
     Where list_of_numbers[a] == list_of_numbers[b] and a < b
     """
     # Add your code here
-    return 0
+    pairs = 0
+
+    list_length = len(list_of_numbers)
+
+    # Loop through the list of number
+    for a in range(list_length):
+
+        # Start from after the first number of the possible pair
+        for b in range(a + 1, list_length):
+
+            # Compare the first pair number and compare to another possible number pair
+            if list_of_numbers[a] == list_of_numbers[b]:
+
+                # The first number's index must be less than the second number's index
+                if a < b:
+                    pairs += 1
+
+    return pairs
 
 
 if __name__ == "__main__":
