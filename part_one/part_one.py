@@ -29,20 +29,19 @@ def validate_and_load_files(file_name):
     Open and validate this file based on the requirements given (see "Column validation" in part_one.txt)
     Save the good data to a new file
     """
-    # Add your code here
 
     # Opens the file in readable mode and decoded into utf8
     with open(file=file_name, mode='r', encoding="utf8") as file:
         # Converts the file into a dictionary reader
         csv_reader = csv.DictReader(file)
 
-        fieldnames = csv_reader.fieldnames # Gets the list of column names
+        # Gets the list of column names
+        fieldnames = csv_reader.fieldnames
+
         #  Iterate through each row of the dictionary
         for row in csv_reader:
 
-            # if fieldnames is None and :
-
-            # Defaults variables to not valid
+           # Defaults variables to not valid
             valid_id = False
             valid_first_name = False
             valid_last_name = False
